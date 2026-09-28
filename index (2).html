@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Indice personal de sitios, herramientas y notas utiles, ordenado por categorias.">
+<style>
+:root{ padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+html{ -webkit-text-size-adjust:100%; }
+img{ max-width:100%; }
+[hidden]{ display:none !important; }
+</style>
+<title>Recursos útiles</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --bg:#eceef1;
+  --surface:#ffffff;
+  --surface-2:#f5f6f8;
+  --ink:#15181d;
+  --muted:#5f6874;
+  --faint:#8b94a1;
+  --line:#d8dce2;
+  --line-soft:#e6e9ee;
+  --accent:#0d6b70;
+  --accent-soft:#e0f0f0;
+  --shadow:0 1px 2px rgba(20,25,35,.06), 0 6px 18px -10px rgba(20,25,35,.22);
+  --c-tec:#2b5ea8; --c-tec-bg:#e5ecf8;
+  --c-apr:#6242ac; --c-apr-bg:#ece6f8;
+  --c-mus:#a83771; --c-mus-bg:#f8e5ef;
+  --c-sal:#1c7350; --c-sal-bg:#e0f1e9;
+  --c-coc:#b35c0d; --c-coc-bg:#f9ecdc;
+  --c-din:#0d6b70; --c-din-bg:#dff0f0;
+  --c-art:#a33b3b; --c-art-bg:#f8e6e6;
+  --c-des:#8a4a12; --c-des-bg:#f7eadd;
+  --c-dev:#2b5ea8; --c-dev-bg:#e5ecf8;
+  --c-map:#3c6b3a; --c-map-bg:#e6f0e5;
+  --c-jue:#8c3f8f; --c-jue-bg:#f4e6f4;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#111418; --surface:#181c22; --surface-2:#1f242b; --ink:#e8ebef;
+    --muted:#9aa4b1; --faint:#6e7885; --line:#2b323b; --line-soft:#232931;
+    --accent:#4fc4c6; --accent-soft:#163335;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+    --c-tec:#82aeef; --c-tec-bg:#1a2536;
+    --c-apr:#b49cf0; --c-apr-bg:#231d36;
+    --c-mus:#ef8dbf; --c-mus-bg:#331a28;
+    --c-sal:#63c79b; --c-sal-bg:#152a21;
+    --c-coc:#e2a367; --c-coc-bg:#2e2214;
+    --c-din:#4fc4c6; --c-din-bg:#163335;
+    --c-art:#e08b8b; --c-art-bg:#321d1d;
+    --c-des:#dda36a; --c-des-bg:#2d2014;
+    --c-dev:#82aeef; --c-dev-bg:#1a2536;
+    --c-map:#8dc48a; --c-map-bg:#1b2a1a;
+    --c-jue:#d493d6; --c-jue-bg:#2d1c2e;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#111418; --surface:#181c22; --surface-2:#1f242b; --ink:#e8ebef;
+  --muted:#9aa4b1; --faint:#6e7885; --line:#2b323b; --line-soft:#232931;
+  --accent:#4fc4c6; --accent-soft:#163335;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  --c-tec:#82aeef; --c-tec-bg:#1a2536;
+  --c-apr:#b49cf0; --c-apr-bg:#231d36;
+  --c-mus:#ef8dbf; --c-mus-bg:#331a28;
+  --c-sal:#63c79b; --c-sal-bg:#152a21;
+  --c-coc:#e2a367; --c-coc-bg:#2e2214;
+  --c-din:#4fc4c6; --c-din-bg:#163335;
+  --c-art:#e08b8b; --c-art-bg:#321d1d;
+  --c-des:#dda36a; --c-des-bg:#2d2014;
+  --c-dev:#82aeef; --c-dev-bg:#1a2536;
+  --c-map:#8dc48a; --c-map-bg:#1b2a1a;
+  --c-jue:#d493d6; --c-jue-bg:#2d1c2e;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:940px; margin:0 auto; padding-inline:16px; padding-block:0 64px}
+
+.masthead{padding-block:34px 16px}
+.kicker{
+  font-family:"IBM Plex Mono", ui-monospace, monospace;
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 8px;
+}
+h1{
+  font-family:"Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  font-weight:800; font-size:clamp(30px,6vw,46px); line-height:1.04;
+  letter-spacing:-.02em; margin:0; text-wrap:balance;
+}
+.deck{color:var(--muted); margin:10px 0 0; max-width:62ch}
+.tally{
+  display:flex; flex-wrap:wrap; gap:6px 18px; margin-top:14px;
+  font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:12px; color:var(--faint);
+  font-variant-numeric:tabular-nums;
+}
+.tally b{color:var(--ink); font-weight:500}
+
+.controls{
+  position:sticky; top:env(safe-area-inset-top, 0px); z-index:20;
+  background:var(--bg); padding-block:12px; margin-top:8px;
+  display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+  border-bottom:1px solid var(--line);
+}
+.search{
+  flex:1 1 240px; font:inherit; font-size:15px; color:var(--ink);
+  background:var(--surface); border:1px solid var(--line); border-radius:9px; padding:9px 13px;
+}
+.search::placeholder{color:var(--faint)}
+.btn{
+  font:inherit; font-size:13.5px; font-weight:600; color:var(--muted);
+  background:var(--surface); border:1px solid var(--line); border-radius:8px;
+  padding:8px 13px; cursor:pointer; white-space:nowrap;
+}
+.btn:hover{border-color:var(--accent); color:var(--accent)}
+.btn:focus-visible, .search:focus-visible, summary:focus-visible, .cmd:focus-visible{
+  outline:2px solid var(--accent); outline-offset:2px;
+}
+
+/* ---------- category ---------- */
+.cats{display:flex; flex-direction:column; gap:10px; margin-top:16px}
+.cat{
+  background:var(--surface); border:1px solid var(--line); border-radius:13px;
+  box-shadow:var(--shadow); overflow:hidden;
+}
+.cat > summary{
+  list-style:none; cursor:pointer; padding:17px 20px;
+  display:grid; grid-template-columns:4px 1fr auto auto; gap:16px; align-items:center;
+}
+.cat > summary::-webkit-details-marker{display:none}
+.rail{width:4px; height:26px; border-radius:2px; background:var(--catc)}
+.cname{
+  font-family:"Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  font-weight:700; font-size:19px; letter-spacing:-.012em; line-height:1.2;
+}
+.cmix{
+  font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:11.5px;
+  color:var(--faint); font-variant-numeric:tabular-nums; text-align:right;
+}
+.ccaret{color:var(--faint); font-size:13px; transition:transform .18s ease}
+.cat[open] .ccaret{transform:rotate(90deg)}
+.cat[open] > summary{border-bottom:1px solid var(--line-soft)}
+.catbody{padding:6px 20px 20px; display:flex; flex-direction:column; gap:0}
+
+/* ---------- item ---------- */
+.item{border-bottom:1px solid var(--line-soft)}
+.item:last-child{border-bottom:0}
+.note > summary{
+  list-style:none; cursor:pointer; padding:14px 0;
+  display:grid; grid-template-columns:1fr auto; gap:3px 12px; align-items:start;
+}
+.note > summary::-webkit-details-marker{display:none}
+.iname{font-weight:600; font-size:16.5px; line-height:1.3; text-wrap:balance}
+.isub{
+  grid-column:1; font-family:"IBM Plex Mono", ui-monospace, monospace;
+  font-size:11.5px; color:var(--faint); display:flex; flex-wrap:wrap; gap:4px 9px; align-items:center;
+}
+.kind{
+  border-radius:4px; padding:1px 6px; font-weight:500;
+  background:var(--catbg); color:var(--catc);
+}
+.icaret{color:var(--faint); font-size:12px; transition:transform .18s ease; padding-top:5px}
+.note[open] .icaret{transform:rotate(90deg)}
+.notebody{padding:2px 0 20px}
+
+a.link{
+  display:grid; grid-template-columns:1fr auto; gap:3px 12px; align-items:start;
+  padding:14px 0; text-decoration:none; color:inherit;
+}
+a.link:hover .iname{color:var(--accent)}
+a.link .arrow{color:var(--faint); font-size:13px; padding-top:4px}
+.idesc{grid-column:1; font-size:14.5px; color:var(--muted); line-height:1.5; margin-top:2px}
+
+/* ---------- note content ---------- */
+.lede{margin:6px 0 0; color:var(--muted); font-size:15px}
+h3.sec{
+  font-family:"Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  font-size:14px; font-weight:600; margin:20px 0 6px;
+}
+.step{border-left:2px solid var(--line); padding-left:14px; margin-top:15px}
+.step .st{font-weight:600; font-size:15px}
+.step p{margin:5px 0 0; font-size:14.8px}
+.step .prob{color:var(--muted)}
+.step .sol::before{content:"→ "; color:var(--accent); font-weight:600}
+ol.items, ul.items{margin:11px 0 0; padding-left:0; list-style:none; display:flex; flex-direction:column; gap:10px}
+ol.items li{display:grid; grid-template-columns:auto 1fr; gap:11px; font-size:14.8px}
+ol.items .n{
+  font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:12px; color:var(--faint);
+  font-variant-numeric:tabular-nums; padding-top:3px; min-width:1.4em;
+}
+.it-t{font-weight:600}
+.it-s{color:var(--muted); font-size:14.3px; display:block; margin-top:1px}
+ul.items li{padding-left:16px; position:relative; font-size:14.8px}
+ul.items li::before{content:""; position:absolute; left:2px; top:9px; width:5px; height:5px; border-radius:50%; background:var(--accent)}
+.cmds{display:flex; flex-wrap:wrap; gap:8px; margin-top:11px}
+.cmd{
+  font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:13px;
+  background:var(--accent-soft); color:var(--accent); border:1px solid transparent;
+  border-radius:7px; padding:7px 12px; cursor:pointer;
+}
+.cmd:hover{border-color:var(--accent)}
+.takeaway{margin-top:18px; background:var(--surface-2); border-radius:10px; padding:12px 14px; font-size:14.3px}
+.takeaway b{
+  display:block; font-family:"IBM Plex Mono", ui-monospace, monospace;
+  font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint);
+  font-weight:500; margin-bottom:5px;
+}
+a{color:var(--accent)}
+.src{margin-top:12px; font-size:12.5px; color:var(--faint); word-break:break-all}
+
+.empty{padding:44px 10px; text-align:center; color:var(--faint); font-size:15px}
+footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--line); font-size:13px; color:var(--faint)}
+@media (max-width:520px){
+  .cat > summary{padding:15px 15px; gap:12px}
+  .cname{font-size:17.5px}
+  .catbody{padding:4px 15px 16px}
+  .iname{font-size:15.5px}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <p class="kicker">Índice personal</p>
+    <h1>Recursos útiles</h1>
+    <p class="deck">Sitios, herramientas y notas, ordenados por para qué sirven. Abre una categoría y tienes dentro todo lo de ese tema.</p>
+    <div class="tally">
+      <span><b id="tTotal">0</b> recursos</span>
+      <span><b id="tCats">0</b> categorías</span>
+      <span><b id="tNotas">0</b> notas</span>
+      <span><b id="tSitios">0</b> sitios</span>
+    </div>
+  </header>
+
+  <div class="controls">
+    <input class="search" id="q" type="search" placeholder="Buscar en todo el archivo…" autocomplete="off">
+    <button class="btn" id="toggleAll" type="button">Abrir todo</button>
+  </div>
+
+  <main class="cats" id="cats"></main>
+  <p class="empty" id="empty" hidden>Nada coincide con esa búsqueda.</p>
+
+  <footer>
+    Las notas son resúmenes propios del contenido de cada vídeo, no citas literales de sus autores.
+  </footer>
+</div>
+
+<script>
+const CATS = [
+  {k:"tec", n:"Tecnología y trucos"},
+  {k:"des", n:"Diseño y gráficos"},
+  {k:"dev", n:"Desarrollo"},
+  {k:"apr", n:"Aprendizaje"},
+  {k:"mus", n:"Música y audio"},
+  {k:"art", n:"Arte y referencia"},
+  {k:"map", n:"Mapas, 3D y fabricación"},
+  {k:"jue", n:"Juegos y ocio"},
+  {k:"sal", n:"Salud y fitness"},
+  {k:"din", n:"Dinero y consumo"},
+  {k:"coc", n:"Cocina"}
+];
+
+const R = [
+  /* ---------- Tecnología y trucos ---------- */
+  {c:"tec", tipo:"nota", t:"perfmon: diagnostica tu PC en 60 segundos", by:"@joecoxtech",
+   lede:"Windows lleva años incluyendo un analizador de rendimiento que escanea el sistema entero en un minuto y devuelve un informe con semáforos de todo lo que lo ralentiza. Gratis, sin instalar nada.",
+   pasos:[
+    {t:"Cómo lanzarlo", p:"Si lo abres sin permisos de administrador, la ventana se queda ahí sin hacer nada. No está roto: le faltan privilegios.", s:"Clic derecho en el botón de Inicio → PowerShell o Terminal como administrador → perfmon /report → Enter. Tarda unos 60 segundos."},
+    {t:"Qué te da el informe", p:"", s:"Arriba, avisos en rojo y amarillo con lo que va genuinamente mal: dispositivos fallando, drivers que nunca cargaron, ajustes de seguridad desactivados. Después un Resource Overview con luz verde, amarilla o roja para CPU, disco, memoria y red. Más abajo, los procesos que más CPU y disco consumieron en esa ventana."},
+    {t:"El mismo comando, otro modificador", p:"", s:"perfmon /res abre el Monitor de recursos: cada proceso, cada archivo que toca y cada conexión de red."}],
+   cmds:["perfmon /report","perfmon /res"],
+   fin:"La próxima vez que alguien te pase un ordenador lento tienes una respuesta real en un minuto, en vez de quemar una tarde investigando."},
+
+  {c:"tec", tipo:"nota", t:"Vaciar Gmail sin pagar más almacenamiento", by:"@donpaquito.tv",
+   lede:"Cuando Gmail avisa de que los 15 GB están casi llenos, Google empuja a comprar espacio. El error de diagnóstico: no son los miles de correos de spam, son los adjuntos.",
+   pasos:[
+    {t:"Paso 1 — Cazar los adjuntos pesados", p:"Cuarenta mil correos de spam ocupan poquísimo; lo que se come el espacio son los archivos adjuntos.", s:"Busca has:attachment larger:10M y salen todos los correos con adjuntos de más de 10 MB. Selecciona los que no sirvan (serán casi todos) y bórralos. El 10M se ajusta a lo que quieras."},
+    {t:"Paso 2 — Barrer lo antiguo", p:"", s:"Busca older_than:2y para todo lo de hace más de dos años. También admite 1y o 6m."},
+    {t:"Paso 3 — El que casi todos se saltan", p:"Borrar no libera espacio por sí solo.", s:"Vacía la papelera. Si no lo haces, Google sigue contando ese espacio como ocupado. Se vacía sola a los 30 días, pero hasta entonces ocupa."}],
+   cmds:["has:attachment larger:10M","older_than:2y"],
+   fin:"Los 15 GB son compartidos entre Gmail, Drive y Fotos, así que esta limpieza suele bastar para quitarse la suscripción de encima."},
+
+  {c:"tec", tipo:"nota", t:"La vista oculta de suscripciones en Gmail", by:"@setupspawn",
+   lede:"Gmail tiene una pantalla de suscripciones que no aparece en el menú lateral. Se llega cambiando una palabra en la URL y lista todos los remitentes de boletines con su volumen y un botón de baja.",
+   pasos:[
+    {t:"Cómo llegar", p:"La vista existe, pero no está enlazada en ninguna parte de la interfaz.", s:"En la barra de direcciones sustituye #inbox por #sub. El número tras /u/ es la cuenta abierta: 0, 1, 2…"},
+    {t:"Qué ves", p:"", s:"Cada remitente con su dirección y cuántos correos te ha mandado últimamente («20+ emails recently»), ordenado por volumen. De un vistazo sabes quién te satura."},
+    {t:"Darse de baja", p:"", s:"Un icono junto a cada remitente abre un diálogo de confirmación y te saca de todas sus listas. Un clic por remitente."}],
+   cmds:["mail.google.com/mail/u/0/#sub"],
+   fin:"Encaja con la nota de limpiar Gmail: aquella libera espacio borrando adjuntos, esta corta el grifo de entrada. Google la ha desplegado por fases, así que puede no estar aún en todas las cuentas."},
+
+  {c:"tec", tipo:"nota", t:"3 alternativas gratis a Adobe", by:"@discount_orlok",
+   lede:"Para quien está harto de que todo el software haya pasado a suscripción: tres alternativas libres a los programas de Adobe más usados.",
+   lista:[
+    {t:"GIMP  →  sustituye a Photoshop", s:"Edición de imagen. Es un acrónimo (GNU Image Manipulation Program). Gratis y sin IA generativa metida a la fuerza. Salió en un episodio de Forensic Files porque se usó para resolver un crimen."},
+    {t:"DaVinci Resolve  →  sustituye a Premiere", s:"Edición de vídeo con versión gratuita completa y muy potente. Se usó en la postproducción de Avatar: el sentido del agua."},
+    {t:"Inkscape  →  sustituye a Illustrator", s:"Gráficos vectoriales. El autor diseñaba con él todas las camisetas de su empresa de serigrafía."}],
+   fin:"Dice que GIMP «se ve y se comporta exactamente como Photoshop»: cubre lo mismo, pero la interfaz y el flujo son distintos y hay curva de aprendizaje. DaVinci Resolve es la que menos concesiones hace frente a su versión de pago."},
+
+  {c:"tec", tipo:"sitio", t:"SEO Studio Tools", u:"https://seostudio.tools/es", d:"Más de 200 herramientas gratuitas de SEO, YouTube, desarrollo web y marketing, en español."},
+  {c:"tec", tipo:"sitio", t:"White Screen Online", u:"https://www.whitescreen.online/", d:"Pantalla blanca a pleno brillo. Luz de relleno para videollamadas o fotos, y para buscar píxeles muertos en un monitor."},
+
+  /* ---------- Diseño y gráficos ---------- */
+  {c:"des", tipo:"sitio", t:"Gesso", u:"https://gesso.build/", d:"Describes lo que estás construyendo y genera pantallas de producto reales con un sistema de diseño coherente."},
+  {c:"des", tipo:"sitio", t:"Brik", u:"https://brik.space/", d:"Le explicas tu idea y te construye una herramienta de diseño a medida, con sus controles: animación, 3D, interactivo."},
+  {c:"des", tipo:"sitio", t:"LogoAI", u:"https://www.logoai.com/design", d:"Logos, kits de marca, mockups y animaciones generados con IA."},
+  {c:"des", tipo:"sitio", t:"Jitter", u:"https://jitter.video/", d:"Motion design en el navegador. Animaciones profesionales sin saber After Effects."},
+  {c:"des", tipo:"sitio", t:"Effect.app", u:"https://effect.app/features", d:"Editor de imagen y vídeo con más de 40 efectos en tiempo real, exportación hasta 4K, sin instalar nada."},
+  {c:"des", tipo:"sitio", t:"Book of Shapes", u:"https://bookofshapes.com/", d:"Galería de patrones generativos (grid, radial, ruido, flow) personalizables y descargables en SVG."},
+  {c:"des", tipo:"sitio", t:"Space Type Generator", u:"https://spacetypegenerator.com/", d:"Tipografía cinética: texto animado en modos cilindro, campo, bandera o espiral."},
+  {c:"des", tipo:"sitio", t:"Kojima", u:"https://kojima-san.vercel.app/", d:"Micro-gráficos procedurales con paleta, layout e instrumento configurables. Exporta y genera por lotes."},
+  {c:"des", tipo:"sitio", t:"Paper Animator", u:"https://paperanimator.com/", d:"Convierte cualquier foto en gráficos animados estilo papel recortado."},
+  {c:"des", tipo:"sitio", t:"Thiings", u:"https://www.thiings.co/things", d:"Más de 10.000 iconos 3D gratuitos. La licencia comercial va aparte."},
+  {c:"des", tipo:"sitio", t:"TextLab", u:"https://textlab.javii.tools/", d:"Mockups exactos de mensajes de iMessage, WhatsApp, Instagram o Notas. PNG transparente sin marca de agua."},
+  {c:"des", tipo:"sitio", t:"Colorify AI", u:"https://colorifyai.art/", d:"Genera páginas para colorear desde texto o fotos, con más de mil plantillas listas."},
+  {c:"des", tipo:"sitio", t:"Cofolios", u:"https://www.cofolios.com/", d:"Portfolios reales de diseñadores en prácticas en Apple, Meta, Google y Microsoft."},
+
+  /* ---------- Desarrollo ---------- */
+  {c:"dev", tipo:"sitio", t:"React Bits", u:"https://reactbits.dev/", d:"Más de 200 componentes React animados e interactivos, open source."},
+  {c:"dev", tipo:"sitio", t:"OriginKit", u:"https://www.originkit.dev/", d:"Librería gratuita de componentes animados. Copias el código, lo llevas a Framer o lo conectas por MCP."},
+  {c:"dev", tipo:"sitio", t:"Replit", u:"https://replit.com/", d:"Entorno de desarrollo completo en el navegador: escribir, ejecutar y desplegar."},
+  {c:"dev", tipo:"sitio", t:"roadmap.sh", u:"https://roadmap.sh/", d:"Rutas de aprendizaje visuales por perfil técnico: frontend, backend, DevOps, IA."},
+  {c:"dev", tipo:"sitio", t:"Codédex", u:"https://www.codedex.io/", d:"Python, HTML, CSS o JavaScript en formato aventura, con experiencia y medallas."},
+  {c:"dev", tipo:"sitio", t:"Tinkered", u:"https://www.tinkered.ai/withdiode", d:"Montar, programar y simular hardware en 3D desde el navegador. Sucesor de Withdiode."},
+
+  /* ---------- Aprendizaje ---------- */
+  {c:"apr", tipo:"nota", t:"6 clases de Yale gratis en YouTube", by:"@rory.bingethinking",
+   lede:"Parte 6 de 6 de su serie. Seis clases universitarias completas y gratuitas, con el motivo por el que merece la pena cada una.",
+   lista:[
+    {t:"How to Fall in Love with Someone", s:"Yale Conversations con David Brooks · Jackson School of Global Affairs. Atención, curiosidad, empatía y los hábitos que hacen posible la intimidad de verdad."},
+    {t:"Emotional Intelligence: From Theory to Everyday Practice", s:"Yale University. Reconocer emociones, entender qué significan y responder en vez de reaccionar. Va menos de ser simpático y más de no dejar que un sentimiento pasajero tome todas tus decisiones."},
+    {t:"13. The Origins of World War I", s:"HIST 276 «France Since 1871» (John Merriman). La Gran Guerra vía alianzas, nacionalismo, competencia imperial y miedo en escalada.", url:"https://oyc.yale.edu/history/hist-276/lecture-13"},
+    {t:"10. Mixed Strategies in Baseball, Dating and Paying Your Taxes", s:"ECON 159 «Game Theory» (Ben Polak). Por qué ser impredecible suele ser la decisión racional.", url:"https://oyc.yale.edu/economics/econ-159/lecture-10"},
+    {t:"15. A Person in the World of People: Morality", s:"PSYC 110 «Introduction to Psychology» (Paul Bloom). Por qué cooperamos, juzgamos, condenamos y a veces racionalizamos el daño.", url:"https://www.youtube.com/watch?v=xpmESnTeZP8"},
+    {t:"5. Property, Freedom, and the Essential Job of Government", s:"PLSC 270 «Capitalism: Success, Crisis and Reform» (Douglas Rae). Qué debe garantizar un gobierno para que la gente sea realmente libre.", url:"https://oyc.yale.edu/political-science/plsc-270/lecture-5"}],
+   fin:"Son clases enteras, no clips: funciona como dieta de atención alternativa al scroll."},
+
+  {c:"apr", tipo:"nota", t:"7 días para dominar cualquier habilidad", by:"@mindshiftdaily022",
+   lede:"Ocho minutos de animación de pizarra. Premisa: no es que seas malo siendo constante, es que el cerebro está hecho para ahorrar energía y por eso apaga la motivación. Seis técnicas para sortearlo.",
+   pasos:[
+    {t:"1. La regla de los 10 minutos", p:"El obstáculo no es la habilidad, es arrancar. El cerebro prefiere lo de bajo esfuerzo y la multitarea lo empeora.", s:"Dite que solo vas a trabajar diez minutos. Aprende a empezar y todo lo demás se vuelve fácil."},
+    {t:"2. El método del chunking", p:"Palabras sueltas, fórmulas aisladas y pasos desconectados no se pegan. Los músicos tocan frases, no notas.", s:"Agrupa en unidades con sentido. En vez de estudiar diez funciones de código por separado, haz un programita que las use todas: el cerebro recuerda significado, no datos en bruto."},
+    {t:"3. La técnica del agujero de conejo", p:"Estudiar por obligación hace que el cerebro se resista.", s:"Sigue la curiosidad alrededor de la habilidad: cómo se forman los acentos, cómo aprenden a hablar los niños. La curiosidad es el combustible más rápido de la memoria: el cerebro crea más ganchos y, como es divertido, lo repites. Si quieres cocinar, no memorices recetas: entiende cómo funcionan los sabores."},
+    {t:"4. Aprender enseñando (Feynman)", p:"Leer da sensación de haber entendido, pero deja huecos invisibles.", s:"Explicar obliga al cerebro a organizar la información y destapa los puntos débiles que suele ignorar. Regla concreta: explícalo en voz alta dentro de la primera hora."},
+    {t:"5. La regla del 70 %", p:"El perfeccionismo convierte el aprendizaje en estrés y te deja ajustando una misma parte una y otra vez.", s:"Quédate en el 70 % y avanza. Los escritores usan borradores sucios; quien aprende idiomas habla pronto en vez de esperar a sonar perfecto. Un 70 % cada día durante una semana siempre gana."},
+    {t:"6. Aprendizaje basado en identidad", p:"La idea más potente del sistema: no aprendes habilidades, te conviertes en alguien. Si crees «no se me da bien cocinar», tu cerebro boicoteará en silencio todo lo que lo contradiga.", s:"Cámbialo por «soy alguien que aprende idiomas» y haz cada día una versión ligeramente incómoda de esa habilidad. Por eso un artista con bocetos feos sigue sintiéndose artista: abandonar ya no encaja con la historia que vive."}],
+   fin:"El objetivo no es dominar algo en siete días, sino convertirte en alguien capaz de aprender cualquier cosa."},
+
+  {c:"apr", tipo:"nota", t:"11 documentales, edición nicho", by:"@rory.bingethinking",
+   lede:"Ordenados de mainstream a progresivamente más nicho. El título dice diez, pero enseña once.",
+   lista:[
+    {t:"The Social Dilemma", s:"Los ingenieros de Instagram, TikTok y Facebook explican cómo diseñaron el móvil para romperte la atención."},
+    {t:"An Inconvenient Truth", s:"El de Al Gore que llevó el clima al gran público. Óscar."},
+    {t:"Blackfish", s:"SeaWorld y las orcas cautivas: hundió la cotización de la empresa."},
+    {t:"Capital in the Twenty-First Century", s:"Las 700 páginas de Piketty en 100 minutos. Avisa de que algunas tesis están hoy discutidas."},
+    {t:"Icarus", s:"Quería hacer un documental sobre dopaje amateur y destapó en directo el dopaje olímpico ruso. Óscar."},
+    {t:"The Act of Killing", s:"Líderes de escuadrones de la muerte indonesios recrean sus asesinatos como cine de Hollywood. Enseña más sobre cómo ocurren las atrocidades que cualquier clase de historia."},
+    {t:"13th", s:"Ava DuVernay sobre la Decimotercera Enmienda y el encarcelamiento masivo en Estados Unidos."},
+    {t:"The Century of the Self", s:"Cuatro horas sobre cómo el sobrino de Freud inventó la publicidad moderna."},
+    {t:"Enron: The Smartest Guys in the Room", s:"El mayor fraude corporativo de la historia, en una sentada."},
+    {t:"Examined Life", s:"Astra Taylor paseando con ocho filósofos vivos: Cornel West, Peter Singer, Judith Butler."},
+    {t:"Can't Get You Out of My Head", s:"Adam Curtis otra vez. Para algunos, el documental más ambicioso jamás hecho."}],
+   fin:"Los tres primeros son divulgación accesible. Los últimos piden más paciencia, pero son los que más cambian la forma de mirar."},
+
+  {c:"apr", tipo:"sitio", t:"Learn Anything", u:"https://learn-anything.xyz/", d:"Descubre y organiza rutas de aprendizaje sobre cualquier tema, con recursos curados."},
+  {c:"apr", tipo:"sitio", t:"Class Central", u:"https://www.classcentral.com/", d:"Buscador de cursos online de universidades de todo el mundo, con filtros y reseñas."},
+  {c:"apr", tipo:"sitio", t:"Imagine the Universe", u:"https://imagine.gsfc.nasa.gov/", d:"Divulgación de astronomía y astrofísica de la NASA."},
+
+  /* ---------- Música y audio ---------- */
+  {c:"mus", tipo:"nota", t:"Top 9 canciones dark fantasy", by:"@topbeatz6",
+   lede:"Nueve temas de estética fantástica y medieval que circulan por las ediciones de TikTok. El vídeo solo muestra los títulos; los intérpretes van añadidos aparte.",
+   lista:[
+    {t:"Golden Brown", s:"The Stranglers — clásico de 1981, omnipresente en ediciones de caballeros."},
+    {t:"Hide", s:"Dorian Concept — el tema de piano que en TikTok llaman «that dark fantasy song»."},
+    {t:"Army Dreamers", s:"Kate Bush — en el vídeo aparece abreviado como «Army Dreams»."},
+    {t:"Love Story", s:"Indila — versión instrumental, la más usada en ediciones de fantasía."},
+    {t:"Soldier, Poet, King", s:"The Oh Hellos — himno folk recurrente en contenido de fantasía."},
+    {t:"Lost Woods", s:"Koji Kondo — banda sonora de Zelda: Ocarina of Time."},
+    {t:"Kingdom Dance", s:"Alan Menken — banda sonora de Enredados."},
+    {t:"Cotton World", s:"Alsmic — tema ambiental."},
+    {t:"Endless Night", s:"Del musical de Broadway de El Rey León."}],
+   fin:"Base directa para una playlist de ambiente épico o para musicar ediciones de vídeo."},
+
+  {c:"mus", tipo:"nota", t:"Dungeon Synth: 8 discos de entrada", by:"@theyellowbutton",
+   lede:"Introducción a un microgénero de sintetizador ambiental con estética fantástica y medieval. Su gancho: si te va la ciencia ficción, la fantasía, las setas, los magos o jugar a rol, engancha.",
+   lista:[
+    {t:"With a Taste for Miruvor", s:"Hole Dweller"},
+    {t:"Beautiful Morning", s:"Mushroom Grandpa"},
+    {t:"Arboreal Melodies", s:"Spellbound Mire"},
+    {t:"De@d End", s:"Radagast"},
+    {t:"Gap Mountain", s:"Covered Bridges"},
+    {t:"Tortoise VI", s:"Ulk"},
+    {t:"The Eighth Wave", s:"Suzanne Ciani — aquí ya vira a electrónica ambiental sci-fi."},
+    {t:"Ice Caves", s:"Emerald Web — del disco Traces of Time."}],
+   fin:"Los seis primeros son dungeon synth puro; los dos últimos tiran a electrónica ambiental de los setenta y ochenta."},
+
+  {c:"mus", tipo:"sitio", t:"Every Noise at Once", u:"https://everynoise.com/", d:"Mapa interactivo de miles de géneros musicales, cada uno con su muestra sonora."},
+  {c:"mus", tipo:"sitio", t:"Hooktheory", u:"https://www.hooktheory.com/", d:"Editor de composición, libros interactivos y base de más de 75.000 canciones analizadas acorde a acorde."},
+  {c:"mus", tipo:"sitio", t:"X-Minus Pro", u:"https://x-minus.pro/?locale=es_ES", d:"Separa voz e instrumental de cualquier canción. Karaoke, samples o práctica."},
+  {c:"mus", tipo:"sitio", t:"Incompetech", u:"https://incompetech.com/", d:"Música libre de derechos de Kevin MacLeod, más generadores de papel pautado. Sin anuncios."},
+  {c:"mus", tipo:"sitio", t:"Syrinscape", u:"https://syrinscape.com/", d:"Paisajes sonoros y efectos para partidas de rol: ambientes, combates, voces de PNJ."},
+
+  /* ---------- Arte y referencia ---------- */
+  {c:"art", tipo:"sitio", t:"AngleRef", u:"https://angleref.com/", d:"Fotos de retrato con licencia abierta organizadas por el ángulo de la cabeza. Para referencia de dibujo."},
+  {c:"art", tipo:"sitio", t:"The Bézier Game", u:"https://bezier.method.ac/", d:"Juego por niveles para dominar la herramienta pluma y las curvas Bézier."},
+  {c:"art", tipo:"sitio", t:"Settei Dreams", u:"https://setteidreams.net/settei/", d:"Archivo de settei: hojas de modelo y material de producción original de anime."},
+
+  /* ---------- Mapas, 3D y fabricación ---------- */
+  {c:"map", tipo:"sitio", t:"Terraink", u:"https://terraink.app/", d:"Arte de mapas de cualquier ciudad, listo para imprimir. PNG, PDF o SVG, sin registro, con datos de OpenStreetMap."},
+  {c:"map", tipo:"sitio", t:"TopoExport", u:"https://topoexport.com/", d:"Mapas 2D y modelos 3D topográficos del mundo entero en DXF, IFC, OBJ o STL."},
+  {c:"map", tipo:"sitio", t:"Watabou", u:"https://watabou.itch.io/", d:"Generadores procedurales de ciudades medievales, mazmorras, costas y pueblos."},
+  {c:"map", tipo:"sitio", t:"Instructables", u:"https://www.instructables.com/", d:"Comunidad de proyectos DIY con guías paso a paso."},
+  {c:"map", tipo:"sitio", t:"CustomGraph", u:"https://customgraph.com/", d:"Papel cuadriculado imprimible: quince tipos, con colores y grosores a medida. Sin cuenta."},
+
+  /* ---------- Juegos y ocio ---------- */
+  {c:"jue", tipo:"sitio", t:"Classic Game Zone", u:"https://classicgamezone.com/", d:"Emuladores de NES, SNES, Mega Drive, Neo Geo, Game Boy, N64, PlayStation y recreativas en el navegador."},
+  {c:"jue", tipo:"sitio", t:"Messenger", u:"https://messenger.abeto.co/", d:"Juego relajado: repartes cartas por un planeta diminuto en 3D. Gratis y sin anuncios."},
+  {c:"jue", tipo:"sitio", t:"Mysterious Package Company", u:"https://mysteriouspackage.com/", d:"Experiencias de misterio que llegan por correo: relatos, enigmas y objetos físicos."},
+  {c:"jue", tipo:"sitio", t:"Make My Drive Fun", u:"https://makemydrivefun.com/", d:"Pones origen y destino y te propone rarezas y desvíos que merecen la pena."},
+
+  /* ---------- Salud y fitness ---------- */
+  {c:"sal", tipo:"nota", t:"Si tienes más de 35 y te sientes acabado, no es la edad", by:"@louisbakerstroud",
+   lede:"La sensación de decadencia pasados los 35 se suele achacar a la edad. Según el autor tiene más que ver con el sobrepeso y un ciclo de malos hábitos, y eso sí se puede cambiar: la fecha de nacimiento no.",
+   pasos:[
+    {t:"El diagnóstico", p:"A partir de los 35 mucha gente culpa a la edad de sentirse peor.", s:"Lo más probable es que sea sobrepeso más hábitos malos. A diferencia de la edad, eso se cambia."},
+    {t:"Su plan de cuatro meses", p:"", s:"Déficit calórico sostenible · entrenar fuerza dos veces por semana, para no quedarse «como un saco de sopa» al perder peso · caminar más · comer proteína y fibra. Promete sentirte al menos diez años más joven."}],
+   fin:"El consejo de fondo es sensato y genérico, pero el vídeo acaba en promoción de su propio dashboard. Es contenido de captación, no asesoramiento personalizado: para cambios de peso o dieta, contrástalo con un profesional."},
+
+  {c:"sal", tipo:"sitio", t:"DAREBEE", u:"https://darebee.com/program.html", d:"Programas de entrenamiento en casa gratuitos. Sin registro, sin anuncios y sin producto que venderte."},
+
+  /* ---------- Dinero y consumo ---------- */
+  {c:"din", tipo:"nota", t:"5 cosas que no valen lo que cuestan", by:"@aliupgrades",
+   src:"https://www.tiktok.com/@aliupgrades/video/7676834908634959126",
+   lede:"Edición ciencia del comportamiento. Idea central: compramos para el «yo futuro» que imaginamos ser, no para la vida que realmente llevamos.",
+   pasos:[
+    {t:"1. Equipo para un hobby que aún no has probado que te guste", p:"La cámara cara antes de haber hecho ninguna foto, el reformer de pilates porque te atrae la idea. Comprar da la sensación satisfactoria de haber empezado algo, pero el hábito sigue sin existir: lo que crea hábitos es la repetición.", s:"Acceso antes que propiedad. Una clase suelta, alquilar la cámara, pedir prestada la máquina de coser. Demuestra compromiso antes de darle presupuesto a tu yo futuro."},
+    {t:"2. Cosas caras cuyo placer es casi todo novedad", p:"El bolso que te emociona tres meses; la habitación de hotel espectacular en la que a la segunda noche solo piensas en que no hay enchufe cerca de la cama. Adaptación hedónica: nos acostumbramos a las mejoras mucho más rápido de lo que creemos.", s:"Gasta de más en lo de utilidad repetida: el colchón, el abrigo de medio año, los auriculares de cada trayecto. ¿Lo disfrutaré repetidamente o solo quiero la sensación de estrenar?"},
+    {t:"3. Gangas al por mayor que solo quieres porque son ganga", p:"El «3 por 100 €» que te hace gastar en algo que no ibas a comprar. El precio de referencia distorsiona: una vez lo ves, el descuento parece dinero ganado. No lo es.", s:"Compra la cantidad que vas a usar de verdad, compara precio por unidad y pregúntate si elegirías esa cantidad sin descuento. Si la respuesta es no, no has descubierto una oportunidad de inversión."},
+    {t:"4. Suscripciones compradas para la persona que serás el lunes", p:"App de idiomas, streaming, meditación. Estudio clásico de gimnasios: quienes eligieron cuota mensual eran tan optimistas sobre cuánto irían que muchos habrían pagado menos por sesión suelta.", s:"Pago por uso hasta que la conducta se demuestre: clases sueltas, bonos, un mes en vez de un año. Luego mira tu uso real. Tu yo futuro ya ha recibido suficiente capital riesgo."},
+    {t:"5. Productos que intentan resolver un problema de entorno", p:"El gadget carísimo para concentrarte mientras el escritorio está hecho un desastre; la agenda preciosa que pasas horas coloreando en vez de hacer la tarea. Comprar más motivación con el grifo abierto es comprar un cubo mejor.", s:"Muchas veces, nada. Cambia primero el entorno: móvil en otra habitación, bloquear la web, zapatillas junto a la puerta. Si después queda un punto de fricción concreto, compra la solución para eso."}],
+   fin:"No compres para la persona imaginaria en la que estás a punto de convertirte. Compra para las conductas que tu vida real ya sostiene."},
+
+  /* ---------- Cocina ---------- */
+  {c:"coc", tipo:"nota", t:"Crema fría de espárragos blancos", by:"@lacaprichosa17",
+   lede:"Receta de un solo paso: todo al vaso de la batidora. Una crema fría al estilo del salmorejo, pero de espárragos, con proteína de huevo y queso cottage.",
+   ingredientes:["1 tarro de espárragos blancos en conserva","2 huevos cocidos","Un puñado de almendras naturales","2 cucharadas de queso cottage","Un chorrito de vinagre de manzana","Un chorrito de aceite de oliva virgen extra","Un poco de pimienta"],
+   receta:["Echar todos los ingredientes al vaso de la batidora.","Batir bien hasta que quede una crema fina.","Servir y decorar con cebollino picado, jamón serrano, semillas de sésamo y un hilo de aceite de oliva virgen extra."],
+   fin:"Aprovecha el líquido y la sal del propio tarro, así que conviene probar antes de añadir más sal."}
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const host = u => { try { return new URL(u).hostname.replace(/^www\./,''); } catch(e){ return ''; } };
+
+function noteBody(r){
+  let h = '';
+  if (r.lede) h += `<p class="lede">${esc(r.lede)}</p>`;
+  if (r.pasos) h += r.pasos.map(p => `<div class="step">
+      <div class="st">${esc(p.t)}</div>
+      ${p.p ? `<p class="prob">${esc(p.p)}</p>` : ''}
+      <p class="sol">${esc(p.s)}</p></div>`).join('');
+  if (r.lista) h += `<ol class="items">` + r.lista.map((i,ix) => `<li>
+      <span class="n">${String(ix+1).padStart(2,'0')}</span>
+      <span><span class="it-t">${esc(i.t)}</span>${i.s ? `<span class="it-s">${esc(i.s)}</span>` : ''}${i.url ? `<span class="it-s"><a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(host(i.url))} ↗</a></span>` : ''}</span></li>`).join('') + `</ol>`;
+  if (r.ingredientes) h += `<h3 class="sec">Ingredientes</h3><ul class="items">` + r.ingredientes.map(i=>`<li>${esc(i)}</li>`).join('') + `</ul>`;
+  if (r.receta) h += `<h3 class="sec">Preparación</h3><ol class="items">` + r.receta.map((p,ix)=>`<li><span class="n">${ix+1}</span><span>${esc(p)}</span></li>`).join('') + `</ol>`;
+  if (r.cmds) h += `<h3 class="sec">Comandos</h3><div class="cmds">` + r.cmds.map(c=>`<button class="cmd" type="button" data-copy="${esc(c)}">${esc(c)}</button>`).join('') + `</div>`;
+  if (r.fin) h += `<div class="takeaway"><b>La idea que te llevas</b>${esc(r.fin)}</div>`;
+  if (r.src) h += `<p class="src">Original: <a href="${esc(r.src)}" target="_blank" rel="noopener">${esc(r.src)}</a></p>`;
+  return h;
+}
+
+function searchText(r){
+  return [r.t, r.by, r.d, r.lede, r.fin,
+    (r.pasos||[]).map(p=>p.t+' '+p.p+' '+p.s).join(' '),
+    (r.lista||[]).map(i=>i.t+' '+(i.s||'')).join(' '),
+    (r.ingredientes||[]).join(' '), (r.receta||[]).join(' '),
+    (r.cmds||[]).join(' '), r.u||''].join(' ').toLowerCase();
+}
+
+const catsBox = document.getElementById('cats');
+CATS.forEach(cat => {
+  const items = R.filter(r => r.c === cat.k);
+  if (!items.length) return;
+  const notas = items.filter(i=>i.tipo==='nota').length;
+  const sitios = items.length - notas;
+
+  const d = document.createElement('details');
+  d.className = 'cat';
+  d.style.setProperty('--catc', `var(--c-${cat.k})`);
+  d.style.setProperty('--catbg', `var(--c-${cat.k}-bg)`);
+
+  const mix = [notas ? `${notas} nota${notas===1?'':'s'}` : '', sitios ? `${sitios} sitio${sitios===1?'':'s'}` : ''].filter(Boolean).join(' · ');
+
+  const body = items.map(r => {
+    if (r.tipo === 'sitio'){
+      return `<a class="item link" href="${esc(r.u)}" target="_blank" rel="noopener" data-text="${esc(searchText(r))}">
+        <span class="iname">${esc(r.t)}</span>
+        <span class="arrow">↗</span>
+        <span class="idesc">${esc(r.d)}</span>
+        <span class="isub"><span>${esc(host(r.u))}</span></span>
+      </a>`;
+    }
+    return `<details class="item note" data-text="${esc(searchText(r))}">
+      <summary>
+        <span class="iname">${esc(r.t)}</span>
+        <span class="icaret">▸</span>
+        <span class="isub"><span class="kind">nota de vídeo</span><span>${esc(r.by)}</span></span>
+      </summary>
+      <div class="notebody">${noteBody(r)}</div>
+    </details>`;
+  }).join('');
+
+  d.innerHTML = `<summary>
+      <span class="rail"></span>
+      <span class="cname">${esc(cat.n)}</span>
+      <span class="cmix">${esc(String(items.length))}<br>${esc(mix)}</span>
+      <span class="ccaret">▸</span>
+    </summary>
+    <div class="catbody">${body}</div>`;
+  catsBox.appendChild(d);
+});
+
+document.getElementById('tTotal').textContent = R.length;
+document.getElementById('tCats').textContent = CATS.filter(c => R.some(r=>r.c===c.k)).length;
+document.getElementById('tNotas').textContent = R.filter(r=>r.tipo==='nota').length;
+document.getElementById('tSitios').textContent = R.filter(r=>r.tipo==='sitio').length;
+
+/* search */
+const q = document.getElementById('q');
+q.addEventListener('input', () => {
+  const s = q.value.trim().toLowerCase();
+  let total = 0;
+  catsBox.querySelectorAll('.cat').forEach(cat => {
+    let hits = 0;
+    cat.querySelectorAll('.item').forEach(it => {
+      const ok = !s || (it.dataset.text || '').includes(s);
+      it.hidden = !ok; if (ok) hits++;
+    });
+    cat.hidden = hits === 0;
+    if (s) cat.open = hits > 0; else cat.open = false;
+    total += hits;
+  });
+  document.getElementById('empty').hidden = total > 0;
+});
+
+/* open / close all */
+const toggleAll = document.getElementById('toggleAll');
+toggleAll.addEventListener('click', () => {
+  const anyClosed = [...catsBox.querySelectorAll('.cat')].some(c => !c.open && !c.hidden);
+  catsBox.querySelectorAll('.cat').forEach(c => { c.open = anyClosed; });
+  toggleAll.textContent = anyClosed ? 'Cerrar todo' : 'Abrir todo';
+});
+catsBox.addEventListener('toggle', () => {
+  const anyOpen = [...catsBox.querySelectorAll('.cat')].some(c => c.open);
+  toggleAll.textContent = anyOpen ? 'Cerrar todo' : 'Abrir todo';
+}, true);
+
+/* copy */
+document.addEventListener('click', e => {
+  const b = e.target.closest('.cmd'); if (!b) return;
+  e.preventDefault();
+  const txt = b.dataset.copy, old = b.textContent;
+  const done = () => { b.textContent = 'copiado ✓'; setTimeout(()=>{ b.textContent = old; }, 1400); };
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(done).catch(() => {
+      const r = document.createRange(); r.selectNodeContents(b);
+      const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    });
+  }
+});
+</script>
+
+</body>
+</html>
